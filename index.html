@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pribadi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+
+        section {
+            background-color: #f7f7f7;
+            padding: 1em;
+            margin-bottom: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        #profil-info {
+            padding: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 0.5em;
+            border-bottom: 1px solid #ddd;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Profil Pribadi</h1>
+    </header>
+    <main>
+        <section id="profil">
+            <h2>Profil</h2>
+            <div id="profil-info">
+                <p>Nama: <span id="nama"></span></p>
+                <p>Umur: <span id="umur"></span></p>
+                <p>Alamat: <span id="alamat"></span></p>
+            </div>
+        </section>
+        <section id="pendidikan">
+            <h2>Riwayat Pendidikan</h2>
+            <ul id="pendidikan-list"></ul>
+        </section>
+        <section id="pengalaman">
+            <h2>Pengalaman Kerja</h2>
+            <ul id="pengalaman-list"></ul>
+        </section>
+        <section id="keahlian">
+            <h2>Keahlian</h2>
+            <ul id="keahlian-list"></ul>
+        </section>
+    </main>
+    <script>
+        // Data profil
+        const profil = {
+            nama: "John Doe",
+            umur: 30,
+            alamat: "Jl. Contoh No. 123",
+            pendidikan: [
+                "SD: Sekolah Dasar Negeri 1",
+                "SMP: Sekolah Menengah Pertama Negeri 2",
+                "SMA: Sekolah Menengah Atas Negeri 3",
+                "S1: Universitas Contoh"
+            ],
+            pengalaman: [
+                "Staff: PT. Contoh (2018-2020)",
+                "Manager: PT. Contoh 2 (2020-2022)"
+            ],
+            keahlian: [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        };
+
+        // Mengisi data profil
+        document.getElementById("nama").textContent = profil.nama;
+        document.getElementById("umur").textContent = profil.umur;
+        document.getElementById("alamat").textContent = profil.alamat;
+
+        // Mengisi riwayat pendidikan
+        const pendidikanList = document.getElementById("pendidikan-list");
+        profil.pendidikan.forEach((pendidikan) => {
+            const li = document.createElement("li");
+            li.textContent = pendidikan;
+            pendidikanList.appendChild(li);
+        });
+
+        // Mengisi pengalaman kerja
+        const pengalamanList = document.getElementById("pengalaman-list");
+        profil.pengalaman.forEach((pengalaman) => {
+            const li = document.createElement("li");
+            li.textContent = pengalaman;
+            pengalamanList.appendChild(li);
+        });
+
+        // Mengisi keahlian
+        const keahlianList = document.getElementById("keahlian-list");
+        profil.keahlian.forEach((keahlian) => {
+            const li = document.createElement("li");
+            li.textContent = keahlian;
+            keahlianList.appendChild(li);
+        });
+    </script>
+</body>
+  </html>
